@@ -50,7 +50,7 @@ public class UserService {
         }
         return false;
     }
-
+    /*
     public void addUserData(){
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
 
@@ -68,4 +68,5 @@ public class UserService {
 
         session.close();
     }
+    */
 }

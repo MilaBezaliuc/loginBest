@@ -1,21 +1,28 @@
 package com.springapp.mvc.model;
 
+import org.hibernate.SessionFactory;
 import org.hibernate.annotations.Columns;
 import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.Table;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by User on 19.07.2017.
  */
 
 @javax.persistence.Entity
+
 @Table(appliesTo = "users")
 public class User {
+    @Autowired
+    private SessionFactory sessionFactory;
+
     @Id
     @Column(name= "id")
     @GeneratedValue(strategy = GenerationType.AUTO)

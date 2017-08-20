@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LoginController {
+    /*
     private User user;
     @Autowired
     private UserService userService;
@@ -39,9 +40,12 @@ public class LoginController {
                                ModelMap model) {
 
         userService.addUser(user);
+        /*
         try {
             userService.addUserData();
         } catch (Exception e){}
+        */
+    /*
         model.addAttribute("user", user);
         model.addAttribute("userList", userService.getUsers());
         System.out.println(userService.getUsers());
@@ -61,4 +65,5 @@ public class LoginController {
         model.addAttribute("userList", userService.getUsers());
         return "redirect:/showUsers";
     }
+    */
 }
