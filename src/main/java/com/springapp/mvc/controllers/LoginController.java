@@ -1,20 +1,17 @@
 package com.springapp.mvc.controllers;
 
-import com.springapp.mvc.datasource.Users;
 import com.springapp.mvc.model.User;
 import com.springapp.mvc.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LoginController {
-    /*
-    private User user;
+
     @Autowired
     private UserService userService;
 
@@ -25,26 +22,28 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String printWelcome(@ModelAttribute("SpringWeb") User user, ModelMap model) {
-        if (userService.checkUser(user)){
-            model.addAttribute("user", user);
-            return "hello";
-        }
-        else
-            return "registration";
-    }
+//    @RequestMapping(value = "/", method = RequestMethod.POST)
+//    public String printWelcome(@ModelAttribute("SpringWeb") User user, ModelMap model) {
+//        if (userService.checkUser(user)){
+//            model.addAttribute("user", user);
+//            return "hello";
+//        }
+//        else
+//            return "registration";
+//    }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String register (@ModelAttribute("SpringWeb") User user,
                                ModelMap model) {
-
+        model.addAttribute("user", user);
         userService.addUser(user);
+        return "hello";
         /*
         try {
             userService.addUserData();
         } catch (Exception e){}
         */
+    }
     /*
         model.addAttribute("user", user);
         model.addAttribute("userList", userService.getUsers());

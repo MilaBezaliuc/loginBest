@@ -1,27 +1,18 @@
 package com.springapp.mvc.model;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.annotations.Columns;
-import org.hibernate.annotations.Entity;
-import org.hibernate.annotations.Table;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.*;
 
 /**
  * Created by User on 19.07.2017.
  */
 
-@javax.persistence.Entity
-
-@javax.persistence.Table(name = "users")
+@Entity
+@Table(name = "users")
 public class User {
-    @Autowired
-    private SessionFactory sessionFactory;
+
+    //This should be in dao layer
+//    @Autowired
+//    private SessionFactory sessionFactory;
 
     @Id
     @Column(name= "id")
@@ -35,6 +26,7 @@ public class User {
     private String password;
 
     public User() {
+        //default constructor for Hibernate
     }
 
     public User(Long id, String name, String password) {
@@ -67,11 +59,6 @@ public class User {
         this.password = password;
     }
 
-//    public boolean checkLogin(String login){
-//        if (this.login.equals(login)) return true;
-//        return false;
-//    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,6 +80,5 @@ public class User {
     public String toString(){
         return name;
     }
-
 
 }
