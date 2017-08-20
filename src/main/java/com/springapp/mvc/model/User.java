@@ -18,7 +18,7 @@ import javax.persistence.*;
 
 @javax.persistence.Entity
 
-@Table(appliesTo = "users")
+@javax.persistence.Table(name = "users")
 public class User {
     @Autowired
     private SessionFactory sessionFactory;

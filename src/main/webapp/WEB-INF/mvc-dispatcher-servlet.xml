@@ -25,7 +25,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>com.endava.spring.entity.User</value>
+                <value>com.springapp.mvc.model.entity.User</value>
             </list>
         </property>
         <property name="hibernateProperties">
